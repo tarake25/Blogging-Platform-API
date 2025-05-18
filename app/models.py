@@ -13,7 +13,6 @@ class post(db.Model):
   id: so.Mapped[int] = so.mapped_column(primary_key=True)
   title: so.Mapped[str] = so.mapped_column(sa.String(128))
   contant: so.Mapped[str] = so.mapped_column(sa.Text)
-  catigory: so.Mapped[str] = so.mapped_column(sa.String(16))
   tags = db.relationship('tag',
                          secondary=tags,
                          backref=db.backref('post', lazy='dynamic'))
